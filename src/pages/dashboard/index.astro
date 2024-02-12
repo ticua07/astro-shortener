@@ -2,16 +2,26 @@
 import { getSession } from "auth-astro/server";
 import Layout from "../../layouts/Layout.astro";
 import Button from "../../components/Button.astro";
+import Links from "../../components/Links.svelte";
+
 const session = await getSession(Astro.request);
+console.log(session);
 if (!session) {
   return Astro.redirect("/");
 }
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class="w-full h-full">
-    <h1 class="text-3xl text-white">Dashboard</h1>
-    <Button id="signout">Sign out</Button>
+  <main class="w-full h-full flex flex-col items-center">
+    <section>
+      <h1 class="text-3xl text-white">Hello {session?.user?.name}👋</h1>
+    </section>
+    <section class="text-white">
+      <Links url={Astro.url.origin} client:load />
+    </section>
+    <footer>
+      <Button id="signout">Sign out</Button>
+    </footer>
   </main>
 </Layout>
 
