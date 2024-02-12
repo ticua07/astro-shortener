@@ -11,14 +11,14 @@ if (!session) {
 }
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Dashboard">
   <main class="w-full h-full flex flex-col items-center">
     <section>
       <h1 class="text-3xl text-white">Hello {session?.user?.name}👋</h1>
     </section>
-    <section class="text-white">
-      <Links url={Astro.url.origin} client:load />
-    </section>
+
+    <Links url={Astro.url.origin} client:load />
+
     <footer>
       <Button id="signout">Sign out</Button>
     </footer>

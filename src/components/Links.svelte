@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { prisma } from "../utils/prisma";
-  import type { Session } from "@auth/core/types";
   import type { Link } from "../utils/types";
   import Card from "./Card.svelte";
+  import Spinner from "./Spinner.svelte";
 
   export let url: string;
   let data: Link[] | null = null;
@@ -19,8 +18,13 @@
 
 {#if data}
   {#each data as short}
-    <Card data={short} />
+    <section
+      class="text-white px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
+    >
+      <Card data={short} />
+    </section>
   {/each}
 {:else}
-  <p>Loading...</p>
+  <!-- <h1 class="text-3xl text-white">Loading</h1> -->
+  <Spinner />
 {/if}
