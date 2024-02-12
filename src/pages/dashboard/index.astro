@@ -1,0 +1,24 @@
+---
+import { getSession } from "auth-astro/server";
+import Layout from "../../layouts/Layout.astro";
+import Button from "../../components/Button.astro";
+const session = await getSession(Astro.request);
+if (!session) {
+  return Astro.redirect("/");
+}
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="w-full h-full">
+    <h1 class="text-3xl text-white">Dashboard</h1>
+    <Button id="signout">Sign out</Button>
+  </main>
+</Layout>
+
+<script>
+  let $signoutButton = document.querySelector("#signout");
+  const { signOut } = await import("auth-astro/client");
+  if ($signoutButton instanceof HTMLButtonElement) {
+    $signoutButton.onclick = () => signOut();
+  }
+</script>

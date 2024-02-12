@@ -1,6 +1,10 @@
 ---
 import GithubIcon from "./GithubIcon.astro";
+import Button from "./Button.astro";
 import LinkIcon from "./LinkIcon.astro";
+import { getSession } from "auth-astro/server";
+
+const session = await getSession(Astro.request);
 ---
 
 <nav class="flex justify-center h-12">
@@ -9,12 +13,20 @@ import LinkIcon from "./LinkIcon.astro";
   >
     <LinkIcon />
     <ul class="flex flex-row items-center gap-8">
-      <li
-        class="flex flex-row items-center gap-2 p-2 text-white bg-black rounded"
-      >
-        <GithubIcon />
-        Sign In with Github
-      </li>
+      {
+        !session ? (
+          <li>
+            <Button id="sign-button">
+              <GithubIcon />
+              Sign In with Github
+            </Button>
+          </li>
+        ) : (
+          <a class="text-white" href="/dashboard">
+            Dashboard
+          </a>
+        )
+      }
 
       <li class="flex flex-row items-center gap-2 text-white">
         <GithubIcon />
@@ -23,3 +35,12 @@ import LinkIcon from "./LinkIcon.astro";
     </ul>
   </section>
 </nav>
+
+<script>
+  const { signIn, signOut } = await import("auth-astro/client");
+
+  const $signButton = document.querySelector("#sign-button");
+  if ($signButton instanceof HTMLButtonElement) {
+    $signButton.onclick = () => signIn("github");
+  }
+</script>
