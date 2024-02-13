@@ -25,7 +25,7 @@
     </p>
   </div>
   <div>
-    <button on:click={() => deleteItem(data.slug)}>
+    <button aria-label="Delete slug" on:click={() => deleteItem(data.slug)}>
       <TrashIcon />
     </button>
   </div>
