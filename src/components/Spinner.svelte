@@ -1,10 +1,9 @@
 <div class="spinner"></div>
 
 <style>
-  @tailwind base;
-
   .spinner {
-    @apply w-8 h-8;
+    width: 2rem; /* tailwind w-8 */
+    height: 2rem; /* tailwind w-8 */
     border: 3px solid #fff;
     border-bottom-color: transparent;
     border-radius: 50%;

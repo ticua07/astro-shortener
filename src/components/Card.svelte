@@ -8,22 +8,20 @@
 </script>
 
 <article
-  class="border h-36 w-96 flex flex-row gap-1 justify-center p-4 px-4 rounded border-zinc-700"
+  class="border h-36 max-w-96 min-w-full flex flex-row gap-1 justify-center p-4 px-4 rounded border-zinc-700"
 >
   <div class="w-full">
-    <div class="flex flex-row items-center gap-2">
-      <h1 class="line-clamp-1 text-3xl leading-snug">
-        /s/{data.slug}
-      </h1>
-      <a href="/s/{data.slug}">
-        <ExternalLinkIcon />
-      </a>
-    </div>
+    <a
+      href="/s/{data.slug}"
+      class="flex flex-row gap-2 items-center line-clamp-1 text-xl leading-snug"
+    >
+      /s/{data.slug}
+    </a>
     <p class="line-clamp-1 text-lg text-zinc-500">
       {data.url}
     </p>
     <p class="line-clamp-1 text-lg text-zinc-300">
-      {data.description}
+      {data.description || ""}
     </p>
   </div>
   <div>

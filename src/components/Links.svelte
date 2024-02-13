@@ -24,13 +24,11 @@
 </script>
 
 {#if !loading}
-  {#each data as short}
-    <section
-      class="text-white px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
-    >
+  <section class="text-white px-2 grid grid-cols-1 md:grid-cols-2 gap-2">
+    {#each data as short}
       <Card {deleteItem} data={short} />
-    </section>
-  {/each}
+    {/each}
+  </section>
 {:else}
   <!-- <h1 class="text-3xl text-white">Loading</h1> -->
   <Spinner />

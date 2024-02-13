@@ -11,7 +11,11 @@ const session = await getSession(Astro.request);
   <section
     class="flex flex-row items-center justify-between w-full md:px-44 sm:px-22 px-8 py-8"
   >
-    <a href="/" class="bg-zinc-900 p-2 rounded">
+    <a
+      aria-label="Go to this website's Github repository"
+      href="/"
+      class="bg-zinc-900 p-2 rounded"
+    >
       <LinkIcon />
     </a>
     <ul class="flex flex-row items-center gap-8">
@@ -24,9 +28,15 @@ const session = await getSession(Astro.request);
             </Button>
           </li>
         ) : (
-          <a class="text-white" href="/dashboard">
-            Dashboard
-          </a>
+          <li>
+            <a
+              aria-label="Go to dashboard"
+              class="text-white"
+              href="/dashboard"
+            >
+              Dashboard
+            </a>
+          </li>
         )
       }
 
