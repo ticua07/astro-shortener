@@ -4,24 +4,31 @@
   import Spinner from "./Spinner.svelte";
 
   export let url: string;
-  let data: Link[] | null = null;
+  let data: Link[] = [];
+  let loading = true;
 
   const fetchData = async () => {
     const res = await fetch(`${url}/api/slugs`);
-    const json = await res.json();
+    const json: Link[] = await res.json();
     console.log(json);
     data = json;
+    loading = false;
+  };
+
+  const deleteItem = async (slug: string) => {
+    data = data.filter((el) => el.slug !== slug);
+    await fetch(`${url}/api/delete?slug=${slug}`);
   };
 
   fetchData();
 </script>
 
-{#if data}
+{#if !loading}
   {#each data as short}
     <section
       class="text-white px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
     >
-      <Card data={short} />
+      <Card {deleteItem} data={short} />
     </section>
   {/each}
 {:else}
