@@ -40,8 +40,14 @@ const session = await getSession(Astro.request);
         )
       }
 
-      <li class="flex flex-row items-center gap-2 text-white">
-        <GithubIcon />
+      <li>
+        <a
+          href="https://github.com/ticua07/astro-shortener"
+          aria-label="Go to this website's Github repository"
+          class="flex flex-row items-center gap-2 text-white"
+        >
+          <GithubIcon />
+        </a>
       </li>
     </ul>
   </section>
