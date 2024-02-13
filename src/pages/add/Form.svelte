@@ -10,6 +10,7 @@
     const res = await fetch(
       `${url}/api/create?url=${link}&slug=${slug}&description=${description}`
     );
+    window.location.href = `${url}/dashboard`;
     console.log(await res.json());
   };
 </script>
