@@ -24,7 +24,9 @@
 </script>
 
 {#if !loading}
-  <section class="text-white px-2 grid grid-cols-1 md:grid-cols-2 gap-2">
+  <section
+    class="text-white mx-auto sm:w-[40rem] lg:w-3/4 px-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2"
+  >
     {#each data as short}
       <Card {deleteItem} data={short} />
     {/each}

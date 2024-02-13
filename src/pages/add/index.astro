@@ -1,0 +1,8 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Form from "./Form.svelte";
+---
+
+<Layout title="Add link">
+  <Form url={Astro.url.origin} client:load />
+</Layout>

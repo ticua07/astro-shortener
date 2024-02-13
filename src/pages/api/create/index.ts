@@ -34,5 +34,5 @@ export const GET: APIRoute = async ({ url, request }) => {
         return new Response(JSON.stringify({ success: false }))
     }
 
-    return new Response(JSON.stringify({}));
+    return new Response(JSON.stringify({ success: true }));
 }

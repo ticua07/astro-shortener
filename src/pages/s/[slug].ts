@@ -13,5 +13,5 @@ export const GET: APIRoute = async ({ params, url, redirect }) => {
         }
     })
 
-    return redirect(data?.url || url.origin, 301)
+    return redirect(data?.url || url.origin, 307)
 }

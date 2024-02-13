@@ -8,7 +8,7 @@
 </script>
 
 <article
-  class="border h-36 max-w-96 min-w-full flex flex-row gap-1 justify-center p-4 px-4 rounded border-zinc-700"
+  class="border w-full flex flex-row gap-1 justify-center p-4 px-4 rounded border-zinc-700"
 >
   <div class="w-full">
     <a
