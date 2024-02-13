@@ -9,11 +9,7 @@ const schema = z.object({
     description: z.string().max(100).optional()
 })
 
-// type Params = {
-//     url: string,
-//     slug: string,
-//     description: string,
-// }
+;
 
 export const GET: APIRoute = async ({ url, request }) => {
     const urlParams = Object.fromEntries(Array.from(url.searchParams))

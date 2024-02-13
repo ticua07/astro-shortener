@@ -7,6 +7,8 @@ const schema = z.object({
     slug: z.string().max(28),
 })
 
+;
+
 export const GET: APIRoute = async ({ url, request }) => {
     const urlParams = Object.fromEntries(Array.from(url.searchParams))
     const session = await getSession(request);
