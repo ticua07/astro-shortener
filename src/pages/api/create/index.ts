@@ -9,23 +9,29 @@ const schema = z.object({
     description: z.string().max(100).optional()
 })
 
-;
+    ;
 
 export const GET: APIRoute = async ({ url, request }) => {
     const urlParams = Object.fromEntries(Array.from(url.searchParams))
-    const session = await getSession(request);
+    const session = await getSession(request).catch((err) => {
+        console.log(err)
+    });;
     if (!session || !session.user?.email) { return new Response(JSON.stringify({ success: false })) }
 
     let result = schema.safeParse(urlParams);
     if (result.success) {
         const data = result.data
 
-        await prisma.link.create({
-            data: {
-                ...data,
-                creator: session.user.email //should be using ID instead of email, but session doesn't have it???
-            }
-        })
+        try {
+            await prisma.link.create({
+                data: {
+                    ...data,
+                    creator: session.user.email //should be using ID instead of email, but session doesn't have it???
+                }
+            })
+        } catch (err) {
+            return new Response(JSON.stringify({ success: false }))
+        }
     } else {
         return new Response(JSON.stringify({ success: false }))
     }

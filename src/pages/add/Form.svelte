@@ -51,6 +51,7 @@
       class="w-full px-2 py-1 text-white border rounded-md bg-backgroundAccent border-zinc-800"
     />
   </div>
+  <span class="text-red-400">Couldn't add slug</span>
   <button class="text-white border border-zinc-800 rounded-md w-32 py-2"
     >Add link 🚀</button
   >
