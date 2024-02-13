@@ -48,7 +48,7 @@ const session = await getSession(Astro.request);
 </nav>
 
 <script>
-  const { signIn, signOut } = await import("auth-astro/client");
+  const { signIn } = await import("auth-astro/client");
 
   const $signButton = document.querySelector("#sign-button");
   if ($signButton instanceof HTMLButtonElement) {

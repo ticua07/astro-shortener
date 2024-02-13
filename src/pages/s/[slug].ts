@@ -1,7 +1,5 @@
 import type { APIRoute } from "astro";
 import { prisma } from "../../utils/prisma";
-import { getSession } from "auth-astro/server";
-import { z } from "astro/zod";
 
 export const GET: APIRoute = async ({ params, url, redirect }) => {
 
