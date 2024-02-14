@@ -1,16 +1,22 @@
 <script lang="ts">
+  import { nanoid } from "nanoid";
+
   export let url: string;
   let link: string;
   let slug: string;
   let description: string = "";
   let error = false;
 
+  const setRandomSlug = () => {
+    slug = nanoid(6);
+  };
+
   const onSubmit = async (e: Event) => {
     e.preventDefault();
     error = false;
 
     const res = await fetch(
-      `${url}/api/create?url=${link}&slug=${slug}&description=${description}`
+      `${url}/api/create?url=${link}&slug=${slug}&description=${description}`,
     );
     const data = await res.json();
 
@@ -40,13 +46,22 @@
       <span class="text-gray-500">(https://link.ticua.ar/s/{slug || ""})</span>
     </label>
 
-    <input
-      bind:value={slug}
-      id="slug"
-      type="text"
-      class="w-full px-2 py-1 text-white border rounded-md bg-backgroundAccent border-zinc-800"
-      placeholder="Custom slug"
-    />
+    <div class="flex">
+      <input
+        bind:value={slug}
+        id="slug"
+        type="text"
+        class="w-full px-2 py-1 text-white border rounded-md bg-backgroundAccent border-zinc-800 rounded-r-none border-r border-r-zinc-700"
+        placeholder="Custom slug"
+      />
+      <button
+        on:click={setRandomSlug}
+        type="button"
+        class="bg-backgroundAccent border-zinc-800 rounded-r-md text-gray-200 px-2"
+      >
+        Randomize
+      </button>
+    </div>
   </div>
   <div class="flex flex-col gap-1">
     <label class="text-white" for="description"

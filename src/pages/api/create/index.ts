@@ -5,7 +5,7 @@ import { z } from "astro/zod";
 
 const schema = z.object({
     url: z.string().url(),
-    slug: z.string().max(28),
+    slug: z.string().max(28).min(3),
     description: z.string().max(100).optional()
 })
 
