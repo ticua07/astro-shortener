@@ -56,5 +56,14 @@ const { title } = Astro.props;
   <body class="bg-background">
     <Navbar />
     <slot />
+    <footer class="absolute w-full bottom-0 mb-6 flex justify-center">
+      <p class="text-white">
+        Made with <a
+          target="_blank"
+          class="text-lucide"
+          href="https://lucide.dev">Lucide</a
+        > icons
+      </p>
+    </footer>
   </body>
 </html>

@@ -6,6 +6,7 @@ export default {
       colors: {
         background: "#121212",
         backgroundAccent: "#242424",
+        lucide: "#F67373"
       },
     },
   },
