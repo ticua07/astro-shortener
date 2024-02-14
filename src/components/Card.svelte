@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Link } from "../utils/types";
-  import ExternalLinkIcon from "../components/links/ExternalLinkIcon.svelte";
+  import EditIcon from "../components/links/EditIcon.svelte";
   import TrashIcon from "../components/links/TrashIcon.svelte";
 
   export let data: Link;
@@ -24,9 +24,12 @@
       {data.description || ""}
     </p>
   </div>
-  <div>
+  <div class="flex flex-col justify-between bg-red-500 items-center">
     <button aria-label="Delete slug" on:click={() => deleteItem(data.slug)}>
       <TrashIcon />
     </button>
+    <a aria-label="Edit slug" href="/edit/{data.slug}">
+      <EditIcon />
+    </a>
   </div>
 </article>
