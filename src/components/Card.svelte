@@ -25,10 +25,18 @@
     </p>
   </div>
   <div class="flex flex-col justify-between items-center">
-    <button aria-label="Delete slug" on:click={() => deleteItem(data.slug)}>
+    <button
+      aria-label="Delete slug"
+      class="opacity-70 hover:opacity-100 transition-opacity duration-200"
+      on:click={() => deleteItem(data.slug)}
+    >
       <TrashIcon />
     </button>
-    <a aria-label="Edit slug" href="/edit/{data.slug}">
+    <a
+      class="opacity-70 hover:opacity-100 transition-opacity duration-200"
+      aria-label="Edit slug"
+      href="/edit/{data.slug}"
+    >
       <EditIcon />
     </a>
   </div>
