@@ -24,7 +24,7 @@
       {data.description || ""}
     </p>
   </div>
-  <div class="flex flex-col justify-between bg-red-500 items-center">
+  <div class="flex flex-col justify-between items-center">
     <button aria-label="Delete slug" on:click={() => deleteItem(data.slug)}>
       <TrashIcon />
     </button>
