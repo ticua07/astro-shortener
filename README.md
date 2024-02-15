@@ -13,7 +13,7 @@ Astro Shortener allows you to shorten links with custom slugs, making sharing ea
 git clone git@github.com:YOUR_USER/astro-shortener.git
 ```
 - [Create a new  Github OAuth App](https://github.com/settings/applications/new)
-- Create and .env file with the following variables:
+- Create and populate an .env file with the following variables:
 ```
 # You can get the secret from https://generate-secret.vercel.app/32
 AUTH_SECRET=
