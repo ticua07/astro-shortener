@@ -52,25 +52,9 @@ const { title, noFooter = false } = Astro.props;
       content="Astro Shortener allows you to shorten links with custom slugs, making sharing easier and more memorable."
     />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
     <title>{title}</title>
-    { noFooter ?
-      <style>
-        :root {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        :root::-webkit-scrollbar {
-          display: none;
-        }
-      </style>
-      : <></>
-    }
   </head>
-  <body class="bg-background font-roboto">
+  <body class="bg-background font-sans font-roboto">
     <Navbar />
     <slot />
     {
@@ -98,3 +82,23 @@ const { title, noFooter = false } = Astro.props;
     }
   </body>
 </html>
+
+<style is:global>
+  @font-face {
+    font-family: "Roboto";
+    font-display: swap;
+    /* src: url("/public/fonts/Roboto/Roboto-Black.ttf"); */
+    /* src: url("/public/fonts/Roboto/Roboto-Bold.ttf"); */
+    /* src: url("/public/fonts/Roboto/Roboto-Italic.ttf"); */
+    /* src: url("/public/fonts/Roboto/Roboto-Medium.ttf"); */
+    src: url("/public/fonts/Roboto/Roboto-Regular.ttf");
+  }
+
+  :root {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  :root::-webkit-scrollbar {
+    display: none;
+  }
+</style>
