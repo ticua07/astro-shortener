@@ -23,6 +23,6 @@ if (!slugData) {
 }
 ---
 
-<Layout title="Astro Shortener - Add link">
+<Layout noFooter={false} title="Astro Shortener - Add link">
   <Edit data={slugData} url={Astro.url.origin} client:load />
 </Layout>
