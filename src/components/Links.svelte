@@ -24,7 +24,7 @@
 
 {#if !loading}
   <section
-    class="text-white justify-center sm:w-[40rem] lg:w-3/4 sm:px-2 px-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2"
+    class="text-white justify-center sm:w-[40rem] lg:w-3/4 sm:px-2 px-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-2"
   >
     {#each data as short}
       <Card {deleteItem} data={short} />

@@ -21,6 +21,7 @@
         /s/{data.slug}
       </a>
       <button
+        aria-label="Copy link"
         on:click={copyLinkToClipboard}
         class="active:scale-90 transition-transform duration-100"
       >
