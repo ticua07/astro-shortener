@@ -10,7 +10,6 @@
   const fetchData = async () => {
     const res = await fetch(`${url}/api/slugs`);
     const json: Link[] = await res.json();
-    console.log(json);
     data = json;
     loading = false;
   };

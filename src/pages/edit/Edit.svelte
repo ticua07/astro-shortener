@@ -3,7 +3,6 @@
 
   export let url: string;
   export let data: Link;
-  console.log(data);
 
   let link = data.url;
   let slug = data.slug;
@@ -15,7 +14,7 @@
     error = false;
 
     const res = await fetch(
-      `${url}/api/edit?url=${link}&slug=${slug}&description=${description}`
+      `${url}/api/edit?url=${link}&slug=${slug}&description=${description}`,
     );
     const data = await res.json();
 
