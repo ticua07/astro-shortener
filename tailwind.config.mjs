@@ -9,6 +9,9 @@ export default {
         lucide: "#F67373"
       },
     },
+    fontFamily: {
+      "roboto": "Roboto"
+    }
   },
   plugins: [],
 };
