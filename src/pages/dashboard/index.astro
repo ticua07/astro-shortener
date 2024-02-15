@@ -11,15 +11,17 @@ if (!session) {
 }
 ---
 
-<Layout title="Astro Shortener - Dashboard">
-  <main class="w-full h-full flex flex-col items-center gap-8 py-6">
+<Layout noFooter={false} title="Astro Shortener - Dashboard">
+  <main class="w-full h-full flex flex-col px-4 gap-8 py-6">
     <section>
-      <h1 class="text-3xl text-white">Hello {session?.user?.name}👋</h1>
+      <h1 class="text-3xl text-center text-white">
+        Hello {session?.user?.name}👋
+      </h1>
     </section>
 
     <Links url={Astro.url.origin} client:load />
 
-    <footer class="flex gap-2">
+    <footer class="flex gap-2 justify-center">
       <Button id="signout">Sign out</Button>
       <a href="/add" aria-label="Add link">
         <Button id="addlink">Add Link</Button>
