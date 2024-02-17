@@ -12,5 +12,9 @@ export const GET: APIRoute = async ({ params, url, redirect }) => {
         }
     })
 
+    if (data && data.url.startsWith(url.origin)) {
+        return redirect(url.origin);
+    }
+
     return redirect(data?.url || url.origin, 307)
 }
