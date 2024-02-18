@@ -5,6 +5,14 @@ import LinkIcon from "./links/LinkIcon.astro";
 import { getSession } from "auth-astro/server";
 
 const session = await getSession(Astro.request);
+const GITHUB_API =
+  "https://api.github.com/repos/ticua07/astro-shortener/commits?limit=3";
+
+let res = await fetch(GITHUB_API);
+let json = await res.json();
+let version: string = json[0].sha.substring(0, 7);
+
+console.log(version);
 ---
 
 <nav class="flex justify-center h-16">
@@ -44,9 +52,10 @@ const session = await getSession(Astro.request);
         <a
           href="https://github.com/ticua07/astro-shortener"
           aria-label="Go to this website's Github repository"
-          class="flex flex-row items-center gap-2 text-white"
+          class="flex flex-row items-center gap-2 text-white transition-opacity duration-200"
         >
           <GithubIcon />
+          {version}
         </a>
       </li>
     </ul>
