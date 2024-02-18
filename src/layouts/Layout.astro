@@ -13,14 +13,17 @@ const { title, noFooter = false } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
     <meta
-      name="description"
+      name="title"
       content="Astro Shortener - Shorten your links with custom slugs"
+    />
+    <meta
+      name="description"
+      content="Astro Shortener lets you short your links to make them easily shareable in the internet. Getting started is easy as logging in and adding your links"
     />
     <meta
       name="keywords"
@@ -38,7 +41,7 @@ const { title, noFooter = false } = Astro.props;
     />
     <meta
       property="og:description"
-      content="Astro Shortener allows you to shorten links with custom slugs, making sharing easier and more memorable."
+      content="Astro Shortener lets you short your links to make them easily shareable in the internet. Getting started is easy as logging in and adding your links"
     />
 
     <!-- Twitter -->
