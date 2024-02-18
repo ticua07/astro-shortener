@@ -20,7 +20,7 @@ if (!session) {
       </h1>
     </section>
 
-    <Links url={Astro.url.origin} client:load />
+    <Links url={Astro.url.origin} client:only="svelte" />
 
     <footer class="flex gap-2 justify-center">
       <Button id="signout">Sign out</Button>
