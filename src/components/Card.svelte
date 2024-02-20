@@ -6,9 +6,11 @@
 
   export let data: Link;
   export let deleteItem: (slug: string) => Promise<void>;
+  export let activeTooltip: (text: string) => void;
 
   const copyLinkToClipboard = () => {
     navigator.clipboard.writeText(`https://link.ticua.ar/s/${data.slug}`);
+    activeTooltip("Copied link to clipboard");
   };
 </script>
 
