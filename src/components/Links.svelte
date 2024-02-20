@@ -35,7 +35,7 @@
 </script>
 
 <div
-  class="absolute invisible lg:visible top-0 left-1/2 -translate-x-1/2 tooltip shadow-lg shadow-zinc-950 border-zinc-800 border rounded-md px-1 max-w-48 w-3/12 py-2 flex justify-center items-center {tooltip
+  class="absolute invisible md:visible top-0 left-1/2 -translate-x-1/2 tooltip shadow-lg shadow-zinc-950 border-zinc-800 border rounded-md px-1 max-w-48 w-3/12 py-2 flex justify-center items-center {tooltip
     ? 'active'
     : ''}"
 >
