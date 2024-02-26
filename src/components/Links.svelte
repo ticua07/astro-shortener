@@ -25,7 +25,6 @@
   const activeTooltip = (text: string) => {
     tooltip = true;
     tooltipText = text;
-    console.log(tooltipText);
     setTimeout(() => {
       tooltip = false;
     }, 1500);

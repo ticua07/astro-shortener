@@ -12,7 +12,6 @@ let res = await fetch(GITHUB_API);
 let json = await res.json();
 let version: string = json[0].sha.substring(0, 7);
 
-console.log(version);
 ---
 
 <nav class="flex justify-center h-16">
