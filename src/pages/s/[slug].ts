@@ -27,8 +27,10 @@ export const GET: APIRoute = async ({ params, url, redirect }) => {
     })
 
     if (data) {
-        await redis.set(slug!, data?.url);
-        await redis.expire(slug!, 30)
+        await redis.set(slug!, data?.url, {
+            "EX": 30
+        })
+
         console.log("CACHE SET!")
 
         // Prevent the url from infinite requests
